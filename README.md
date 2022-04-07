@@ -8,7 +8,7 @@
 
 ## سپاس
 
-سپاس بۆ [@aso-mehmudi](https://github.com/@aso-mehmudi) و
+سپاس بۆ [@aso-mehmudi](https://github.com/aso-mehmudi) و
 [@Sarchia](https://github.com/Sarchia) بۆ دابینکردنی لیستی وشەکان.
 
 ## مۆڵەتنامە
