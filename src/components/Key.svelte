@@ -1,6 +1,6 @@
 <script lang="ts">
   import { submit, backspace, insert } from "../board";
-  import { excludedSet, includedSet, shift } from "../store";
+  import { excludedSet, includedSet } from "../store";
 
   export let key: string;
   export let text: string;
@@ -24,14 +24,6 @@
       }
       case "❌": {
         backspace();
-        break;
-      }
-      case "⬆️": {
-        shift.set(true);
-        break;
-      }
-      case "⬇️": {
-        shift.set(false);
         break;
       }
       default: {

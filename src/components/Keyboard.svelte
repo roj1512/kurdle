@@ -2,39 +2,12 @@
   import { insert, backspace, submit } from "../board";
   import Key from "./Key.svelte";
   import KeyboardRow from "./KeyboardRow.svelte";
-  import { shift } from "../store";
 
-  let rows: (string | string[])[][];
-
-  shift.subscribe((v) => {
-    rows = [
-      [
-        "ق",
-        "و",
-        "ە",
-        v ? "ڕ" : "ر",
-        "ت",
-        v ? "ێ" : "ی",
-        ["ئ", "ئـ"],
-        v ? "ع" : "ح",
-        "ۆ",
-        "پ",
-      ],
-      [
-        "ا",
-        v ? "ش" : "س",
-        "د",
-        "ف",
-        v ? "غ" : "گ",
-        ["ه", "هـ"],
-        "ژ",
-        "ک",
-        v ? "ڵ" : "ل",
-      ],
-      ["ز", "خ", v ? "چ" : "ج", "ڤ", "ب", "ن", "م"],
-      ["✅", v ? "⬇️" : "⬆️", "❌"],
-    ];
-  });
+  let rows = [
+    ["ق", "و", "ە", "ر", "ت", "ڕ", "ی", "ێ", ["ئ", "ئـ"], "ح", "ع", "ۆ", "پ"],
+    ["ا", "س", "ش", "د", "ف", "گ", "غ", ["ه", "هـ"], "ژ", "ک", "ل", "ڵ"],
+    ["✅", "ز", "خ", "ج", "چ", "ڤ", "ب", "ن", "م", "❌"],
+  ];
 
   const allowedKeys = "قوەرڕتیێئحعۆپاشدفگغهژکلڵزخجچڤبنم".split("");
 
@@ -54,10 +27,6 @@
         await submit();
         break;
       }
-      case "Shift": {
-        shift.set(false);
-        break;
-      }
     }
   };
 
@@ -65,10 +34,6 @@
     switch (ev.key) {
       case "Enter": {
         ev.preventDefault();
-        break;
-      }
-      case "Shift": {
-        shift.set(true);
         break;
       }
     }

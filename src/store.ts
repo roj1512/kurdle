@@ -71,6 +71,4 @@ export const finished = writable<Finished>({
 
 export const toast = writable("");
 
-export const shift = writable(false);
-
-cache({ shift, board, currentRow, finished, excludedSet, includedSet });
+cache({ board, currentRow, finished, excludedSet, includedSet });
